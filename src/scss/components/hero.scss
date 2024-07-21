@@ -1,0 +1,39 @@
+.hero {
+    width: 100%;
+    margin-bottom: 60px;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+    }
+    &__left {
+        display: flex;
+        gap: 40px;
+    }
+    &__name-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    &__name {
+        font-size: 96px;
+        font-weight: bold;
+        text-align: right;
+        margin-bottom: 40px;
+        margin-top: 0;
+    }
+    &__nick {
+        opacity: .5;
+        font-size: 24px;
+        text-align: right;
+    }
+    &__img {
+        object-fit: contain;
+    }
+    &__right {
+        min-width: 500px;
+    }
+    &__title {}
+    &__code {
+        margin-bottom: 15px;
+    }
+}

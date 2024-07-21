@@ -21,6 +21,26 @@ function isWebp() {
 
 isWebp();
 
+function initCopyCode() {
+    let codes = document.querySelectorAll('.code__body');
+    codes.forEach((elem) => {
+        elem.addEventListener('click', (event) => {
+            UIkit.notification.closeAll()
+            navigator.clipboard.writeText(elem.innerText).then(function() {
+                UIkit.notification({
+                    message: 'Код успешно скопирован',
+                    status: 'primary',
+                    pos: 'bottom-center',
+                    group: false,
+                    timeout: 5000
+                });
+            }, function(err) {
+                console.error('Произошла ошибка при копировании текста: ', err);
+            });
+        })
+    })
+}
+
 document.addEventListener('DOMContentLoaded', (event) => {
-    
+    initCopyCode();
 })
