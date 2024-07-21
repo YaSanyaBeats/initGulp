@@ -40,12 +40,13 @@ const scss = () => {
           })
         )
       )
+      .pipe(plugins.browserSync.stream())
+
       /** Раскомментировать если нужен не сжатый дубль файла стилей */
       .pipe(gulp.dest(filePaths.build.css))
       .pipe(plugins.if(isBuild, cleanCss()))
       .pipe(rename({ extname: '.min.css' }))
       .pipe(gulp.dest(filePaths.build.css))
-      .pipe(plugins.browserSync.stream())
   );
 };
 
